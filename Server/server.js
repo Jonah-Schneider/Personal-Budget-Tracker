@@ -3,10 +3,12 @@ const cors = require('cors');
 const authRoutes = require('./routes/auth');
 require('dotenv').config();
 require('./config/db');
+const transactionRoutes = require('./routes/transactions');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/transactions', transactionRoutes);
 app.use('/api/auth', authRoutes)
 app.get('/', (req, res) => {
   res.send('Server is running!');
