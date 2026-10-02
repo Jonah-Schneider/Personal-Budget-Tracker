@@ -39,7 +39,7 @@ export async function updateTransaction(id, transactionData, token) {
   return response.data;
 }
 
-export async function deleteTransaction( id, token) {
+export async function deleteTransaction(id, token) {
   const response = await axios.delete(
     `${API_URL}/api/transactions/${id}`,
     {
