@@ -6,7 +6,9 @@ require('./config/db');
 const transactionRoutes = require('./routes/transactions');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://personal-budget-tracker-jonah-9j9letolq.vercel.app/'
+}));
 app.use(express.json());
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/auth', authRoutes)
